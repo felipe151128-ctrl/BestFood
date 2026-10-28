@@ -1,0 +1,20 @@
+/* Mejora 3: resumen de pedido */
+.bf-order-details{margin:0 0 1.25rem;padding:1.25rem;background:#fff;border:1px solid var(--sand,#e8e2d6);border-radius:var(--radius-lg,18px);color:var(--ink,#242820)}
+.bf-order-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1rem}
+.bf-order-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.12em;color:var(--forest,#284b35);margin:0 0 .35rem}
+.bf-order-head h2{font-family:var(--font-display,Georgia,serif);font-size:1.35rem;margin:0}
+.bf-order-badge{white-space:nowrap;padding:.4rem .65rem;background:#edf3e9;color:var(--forest,#284b35);border-radius:999px;font-size:.8rem;font-weight:700}
+.bf-order-plan{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.85rem;padding:1rem;background:#f8f7f2;border-radius:var(--radius,12px)}
+.bf-order-plan div{display:flex;flex-direction:column;gap:.25rem}
+.bf-order-plan span,.bf-order-totals span{font-size:.8rem;color:var(--ink-soft,#73776d)}
+.bf-order-plan strong{font-size:.9rem;line-height:1.4}
+.bf-order-dishes-wrap{margin-top:1.2rem}.bf-order-dishes-wrap h3{font-size:1rem;margin:0 0 .65rem}
+.bf-order-dishes{list-style:none;padding:0;margin:0}
+.bf-order-dish{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.7rem 0;border-bottom:1px solid var(--sand,#e8e2d6)}
+.bf-order-dish:last-child{border-bottom:0}.bf-order-dish>span{display:flex;flex-direction:column;gap:.2rem}
+.bf-order-dish strong{font-size:.9rem}.bf-order-dish small{font-size:.8rem;color:var(--ink-soft,#73776d)}
+.bf-order-totals{border-top:1px solid var(--sand,#e8e2d6);margin-top:.8rem;padding-top:.8rem;display:flex;flex-direction:column;gap:.6rem}
+.bf-order-totals div{display:flex;justify-content:space-between;gap:1rem}.bf-order-totals strong{font-size:.95rem;color:var(--forest,#284b35)}
+.bf-order-note{font-size:.78rem;line-height:1.5;color:var(--ink-soft,#73776d);margin:1rem 0}
+.bf-order-links{display:flex;gap:1rem;flex-wrap:wrap}.bf-order-links a{font-size:.85rem;font-weight:600;color:var(--forest,#284b35);text-underline-offset:3px}
+@media(max-width:520px){.bf-order-plan{grid-template-columns:1fr}.bf-order-head{flex-direction:column}.bf-order-badge{align-self:flex-start}}

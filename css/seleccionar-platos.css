@@ -1,0 +1,38 @@
+/* Selector de platos BestFood: complementa css/styles.css */
+.meal-picker-wrap{max-width:1180px;margin:0 auto;padding:2rem 1.5rem 5rem}
+.meal-back{display:inline-block;color:var(--ink-soft);text-decoration:none;margin-bottom:1.5rem}
+.meal-picker-heading{max-width:720px;margin:0 auto 2rem;text-align:center}
+.meal-picker-heading .eyebrow-plain{color:var(--forest);font-weight:700;letter-spacing:.12em;font-size:.78rem;margin-bottom:.7rem}
+.meal-picker-heading h1{font-family:var(--font-display);font-size:clamp(2rem,5vw,3.4rem);margin-bottom:.7rem}
+.meal-picker-heading>p:last-child{color:var(--ink-soft);line-height:1.65}
+.meal-order-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;padding:1.2rem;background:#fff;border:1px solid var(--sand);border-radius:var(--radius-lg);margin-bottom:1rem}
+.meal-order-summary div{display:flex;flex-direction:column;gap:.35rem}
+.meal-order-summary span,.picker-bottom span{font-size:.82rem;color:var(--ink-soft)}
+.meal-order-summary strong{font-size:1rem;color:var(--forest)}
+.picker-progress{height:8px;background:var(--sand);border-radius:99px;overflow:hidden}
+.picker-progress span{display:block;width:0;height:100%;background:var(--forest);transition:width .2s ease}
+.picker-feedback{text-align:center;min-height:2rem;padding:1rem 0;color:var(--ink-soft)}
+.picker-feedback.complete{color:var(--forest);font-weight:700}
+.picker-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}
+.picker-card{background:#fff;border:1px solid var(--sand);border-radius:var(--radius-lg);overflow:hidden;transition:border-color .2s,box-shadow .2s}
+.picker-card.has-quantity{border-color:var(--forest);box-shadow:0 10px 28px -20px rgba(31,61,43,.7)}
+.picker-card img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.picker-card-body{padding:1rem 1.1rem 1.2rem}
+.picker-card h2{font-family:var(--font-display);font-size:1.12rem;line-height:1.3;margin:.55rem 0}
+.picker-tag{display:inline-block;background:var(--sand);padding:.22rem .6rem;border-radius:999px;font-size:.75rem;color:var(--ink-soft)}
+.picker-tag.festival{background:var(--mango);color:var(--forest-dark);font-weight:600}
+.picker-price{font-weight:700;margin-bottom:1rem}
+.quantity-control{display:flex;align-items:center;justify-content:center;gap:1rem;background:#f7f6f1;border-radius:999px;padding:.35rem}
+.qty-btn{width:38px;height:38px;border:0;border-radius:50%;background:var(--forest);color:white;font-size:1.35rem;cursor:pointer}
+.qty-btn:disabled{opacity:.3;cursor:not-allowed}
+.qty-value{font-weight:700;min-width:1.5rem;text-align:center}
+.picker-bottom{position:sticky;bottom:1rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:2rem;padding:1.2rem 1.4rem;background:#fff;border:1px solid var(--sand);border-radius:var(--radius-lg);box-shadow:0 12px 35px -22px rgba(0,0,0,.35);z-index:5}
+.picker-bottom>div{display:flex;flex-direction:column;gap:.25rem}
+.picker-bottom strong{font-size:1.1rem;color:var(--forest)}
+.picker-bottom p{font-size:.82rem;color:var(--ink-soft);margin:0}
+#picker-continue:disabled{opacity:.45;cursor:not-allowed}
+.checkout-dishes{margin:1rem 0;padding:1rem;background:#f8f7f2;border-radius:var(--radius);font-size:.9rem}
+.checkout-dishes h3{font-size:1rem;margin:0 0 .6rem}
+.checkout-dishes ul{padding-left:1.2rem;margin:.3rem 0}
+@media(max-width:860px){.picker-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.meal-order-summary{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.meal-picker-wrap{padding:1.2rem 1rem 4rem}.picker-grid{grid-template-columns:1fr}.picker-bottom{align-items:stretch;flex-direction:column}.picker-bottom button{width:100%}}

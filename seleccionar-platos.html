@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BestFood — Elige tus platos</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;0,600;0,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/seleccionar-platos.css">
+</head>
+<body>
+  <header class="site-nav">
+    <a href="landing.html" class="nav-logo">
+      <img src="assets/logo.png" alt="BestFood" class="nav-logo-icon"> BestFood
+    </a>
+    <div class="nav-actions">
+      <a href="landing.html#planes" class="link-muted">Cambiar plan</a>
+    </div>
+  </header>
+
+  <main class="meal-picker-wrap">
+    <a class="meal-back" href="landing.html#planes">← Volver a los planes</a>
+    <div class="meal-picker-heading">
+      <p class="eyebrow-plain">TU SEMANA, A TU MANERA</p>
+      <h1>Elige tus platos</h1>
+      <p>Selecciona las cantidades de cada plato. Puedes repetir tus favoritos hasta completar las comidas incluidas en tu plan.</p>
+    </div>
+
+    <section class="meal-order-summary" aria-live="polite">
+      <div><span>Plan</span><strong id="picker-plan">—</strong></div>
+      <div><span>Comidas por semana</span><strong id="picker-limit">—</strong></div>
+      <div><span>Entrega</span><strong id="picker-delivery">—</strong></div>
+      <div><span>Platos elegidos</span><strong id="picker-count">0 / 0</strong></div>
+    </section>
+
+    <div class="picker-progress" aria-hidden="true"><span id="picker-progress-bar"></span></div>
+    <p id="picker-feedback" class="picker-feedback">Agrega platos hasta completar tu semana.</p>
+
+    <section class="picker-grid" id="picker-grid">
+      <article class="picker-card" data-id="quinoa" data-name="Bowl de quinoa y vegetales" data-price="18000" data-tag="Alto en fibra" data-image="https://images.pexels.com/photos/3872370/pexels-photo-3872370.jpeg?cs=tinysrgb&w=600">
+        <img src="https://images.pexels.com/photos/3872370/pexels-photo-3872370.jpeg?cs=tinysrgb&w=600" alt="Bowl de quinoa y vegetales">
+        <div class="picker-card-body"><span class="picker-tag">Alto en fibra</span><h2>Bowl de quinoa y vegetales</h2><p class="picker-price">$18.000</p>
+          <div class="quantity-control"><button type="button" class="qty-btn" data-change="-1" aria-label="Quitar bowl de quinoa">−</button><output class="qty-value">0</output><button type="button" class="qty-btn" data-change="1" aria-label="Agregar bowl de quinoa">+</button></div>
+        </div>
+      </article>
+      <article class="picker-card" data-id="salmon" data-name="Salmón a la parrilla" data-price="26000" data-tag="Alto en proteína" data-image="https://images.pexels.com/photos/725991/pexels-photo-725991.jpeg?cs=tinysrgb&w=600">
+        <img src="https://images.pexels.com/photos/725991/pexels-photo-725991.jpeg?cs=tinysrgb&w=600" alt="Salmón a la parrilla">
+        <div class="picker-card-body"><span class="picker-tag">Alto en proteína</span><h2>Salmón a la parrilla</h2><p class="picker-price">$26.000</p>
+          <div class="quantity-control"><button type="button" class="qty-btn" data-change="-1" aria-label="Quitar salmón">−</button><output class="qty-value">0</output><button type="button" class="qty-btn" data-change="1" aria-label="Agregar salmón">+</button></div>
+        </div>
+      </article>
+      <article class="picker-card" data-id="ramen" data-name="Ramen japonés" data-price="24000" data-tag="Día de festival" data-image="https://images.pexels.com/photos/884600/pexels-photo-884600.jpeg?cs=tinysrgb&w=600">
+        <img src="https://images.pexels.com/photos/884600/pexels-photo-884600.jpeg?cs=tinysrgb&w=600" alt="Ramen japonés">
+        <div class="picker-card-body"><span class="picker-tag festival">🌏 Día de festival</span><h2>Ramen japonés</h2><p class="picker-price">$24.000</p>
+          <div class="quantity-control"><button type="button" class="qty-btn" data-change="-1" aria-label="Quitar ramen">−</button><output class="qty-value">0</output><button type="button" class="qty-btn" data-change="1" aria-label="Agregar ramen">+</button></div>
+        </div>
+      </article>
+      <article class="picker-card" data-id="italiana" data-name="Trattoria italiana" data-price="25000" data-tag="Día de festival" data-image="https://images.pexels.com/photos/6223229/pexels-photo-6223229.jpeg?cs=tinysrgb&w=600">
+        <img src="https://images.pexels.com/photos/6223229/pexels-photo-6223229.jpeg?cs=tinysrgb&w=600" alt="Trattoria italiana">
+        <div class="picker-card-body"><span class="picker-tag festival">🌏 Día de festival</span><h2>Trattoria italiana</h2><p class="picker-price">$25.000</p>
+          <div class="quantity-control"><button type="button" class="qty-btn" data-change="-1" aria-label="Quitar plato italiano">−</button><output class="qty-value">0</output><button type="button" class="qty-btn" data-change="1" aria-label="Agregar plato italiano">+</button></div>
+        </div>
+      </article>
+      <article class="picker-card" data-id="vegano" data-name="Bowl vegano de garbanzos" data-price="19000" data-tag="100% plant-based" data-image="https://images.pexels.com/photos/3794378/pexels-photo-3794378.jpeg?cs=tinysrgb&w=600">
+        <img src="https://images.pexels.com/photos/3794378/pexels-photo-3794378.jpeg?cs=tinysrgb&w=600" alt="Bowl vegano de garbanzos">
+        <div class="picker-card-body"><span class="picker-tag">100% plant-based</span><h2>Bowl vegano de garbanzos</h2><p class="picker-price">$19.000</p>
+          <div class="quantity-control"><button type="button" class="qty-btn" data-change="-1" aria-label="Quitar bowl vegano">−</button><output class="qty-value">0</output><button type="button" class="qty-btn" data-change="1" aria-label="Agregar bowl vegano">+</button></div>
+        </div>
+      </article>
+      <article class="picker-card" data-id="ensalada" data-name="Ensalada fresca del día" data-price="16000" data-tag="Baja en calorías" data-image="https://images.pexels.com/photos/4198015/pexels-photo-4198015.jpeg?cs=tinysrgb&w=600">
+        <img src="https://images.pexels.com/photos/4198015/pexels-photo-4198015.jpeg?cs=tinysrgb&w=600" alt="Ensalada fresca del día">
+        <div class="picker-card-body"><span class="picker-tag">Baja en calorías</span><h2>Ensalada fresca del día</h2><p class="picker-price">$16.000</p>
+          <div class="quantity-control"><button type="button" class="qty-btn" data-change="-1" aria-label="Quitar ensalada">−</button><output class="qty-value">0</output><button type="button" class="qty-btn" data-change="1" aria-label="Agregar ensalada">+</button></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="picker-bottom">
+      <div><span>Selección semanal</span><strong id="picker-bottom-count">0 de 0 comidas</strong><p id="picker-bottom-message">Te faltan comidas por elegir.</p></div>
+      <button type="button" class="btn-primary" id="picker-continue" disabled>Continuar al pago →</button>
+    </section>
+  </main>
+  <script src="js/seleccionar-platos.js"></script>
+</body>
+</html>

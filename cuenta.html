@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BestFood — Mi cuenta</title>
+
+  <link rel="icon" type="image/png" href="assets/logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="site-nav">
+    <a href="landing.html" class="nav-logo">
+      <img src="assets/logo.png" alt="BestFood" class="nav-logo-icon">
+      BestFood
+    </a>
+    <div class="nav-actions nav-icons">
+      <a href="menu.html" class="nav-icon-btn" aria-label="Tu pedido">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M6 8h12l-1 12H7L6 8zM9 8V6a3 3 0 0 1 6 0v2"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <section class="account-wrap">
+
+    <!-- ============ ENCABEZADO ============ -->
+    <div class="account-header">
+      <div>
+        <p class="account-greeting" id="account-greeting">Hola de nuevo 👋</p>
+        <h1>Tu cuenta BestFood</h1>
+      </div>
+      <span class="plan-badge" id="account-plan-badge">Plan Plus</span>
+    </div>
+
+    <!-- ============ TU PLAN ACTIVO ============ -->
+    <div class="account-card">
+      <h2>Tu plan activo</h2>
+      <div class="plan-summary-grid">
+        <div class="plan-summary-item">
+          <span>Comidas por semana</span>
+          <strong>10</strong>
+        </div>
+        <div class="plan-summary-item">
+          <span>Entrega</span>
+          <strong>Semanal</strong>
+        </div>
+        <div class="plan-summary-item">
+          <span>Próxima entrega</span>
+          <strong>Lunes 22 sep.</strong>
+        </div>
+        <div class="plan-summary-item">
+          <span>Próximo día de festival</span>
+          <strong>Jueves — Cocina asiática</strong>
+        </div>
+      </div>
+      <a href="landing.html#planes" class="btn-ghost">Cambiar de plan</a>
+    </div>
+
+    <!-- ============ HISTORIAL DE PEDIDOS ============ -->
+    <div class="account-card">
+      <h2>Historial de pedidos</h2>
+      <div class="order-history">
+        <div class="order-row">
+          <div>
+            <p class="order-date">15 de septiembre, 2026</p>
+            <p class="order-desc">Plan Plus · 10 comidas · Entrega semanal</p>
+          </div>
+          <span class="order-status delivered">Entregado</span>
+          <strong class="order-total">$180.000</strong>
+        </div>
+        <div class="order-row">
+          <div>
+            <p class="order-date">8 de septiembre, 2026</p>
+            <p class="order-desc">Plan Plus · 10 comidas · Entrega semanal</p>
+          </div>
+          <span class="order-status delivered">Entregado</span>
+          <strong class="order-total">$180.000</strong>
+        </div>
+        <div class="order-row">
+          <div>
+            <p class="order-date">22 de septiembre, 2026</p>
+            <p class="order-desc">Plan Plus · 10 comidas · Entrega semanal</p>
+          </div>
+          <span class="order-status on-the-way">En camino</span>
+          <strong class="order-total">$180.000</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ PREFERENCIAS NUTRICIONALES ============ -->
+    <div class="account-card">
+      <h2>Preferencias nutricionales</h2>
+      <p class="account-card-sub">Ajusta cuánto priorizar cada nutriente en tus comidas. Se guarda automáticamente.</p>
+
+      <div class="pref-row">
+        <div class="pref-label">
+          <span>Proteína</span>
+          <span id="pref-protein-value">70%</span>
+        </div>
+        <input type="range" id="pref-protein" min="0" max="100" value="70">
+      </div>
+
+      <div class="pref-row">
+        <div class="pref-label">
+          <span>Carbohidratos</span>
+          <span id="pref-carbs-value">45%</span>
+        </div>
+        <input type="range" id="pref-carbs" min="0" max="100" value="45">
+      </div>
+
+      <div class="pref-row">
+        <div class="pref-label">
+          <span>Grasas</span>
+          <span id="pref-fats-value">30%</span>
+        </div>
+        <input type="range" id="pref-fats" min="0" max="100" value="30">
+      </div>
+
+      <p class="pref-saved-note" id="pref-saved-note"></p>
+    </div>
+
+    <!-- ============ NOVEDADES ============ -->
+    <div class="account-card">
+      <h2>Novedades</h2>
+      <div class="news-list">
+        <div class="news-item">
+          <span class="news-icon">🌏</span>
+          <div>
+            <p class="news-title">Nuevo día de festival: cocina mexicana</p>
+            <p class="news-desc">Este mes agregamos tacos y enchiladas a tus días de festival.</p>
+          </div>
+        </div>
+        <div class="news-item">
+          <span class="news-icon">🎉</span>
+          <div>
+            <p class="news-title">20% de descuento en tu primer mes Premium</p>
+            <p class="news-desc">Válido si actualizas tu plan antes de fin de mes.</p>
+          </div>
+        </div>
+        <div class="news-item">
+          <span class="news-icon">📦</span>
+          <div>
+            <p class="news-title">Ahora puedes elegir entrega día a día</p>
+            <p class="news-desc">Actualizamos la calculadora de planes con esta opción.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ GESTIÓN DE CUENTA ============ -->
+    <div class="account-card">
+      <h2>Gestión de cuenta</h2>
+      <div class="account-actions">
+        <a href="landing.html#planes" class="btn-ghost btn-block">Cambiar de plan</a>
+        <a href="landing.html" class="btn-ghost btn-block logout-btn">Cerrar sesión</a>
+      </div>
+    </div>
+
+  </section>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

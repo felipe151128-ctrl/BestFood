@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BestFood — Programa tu entrega</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;0,600;0,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/programar-entrega.css">
+</head>
+<body>
+  <header class="site-nav">
+    <a href="landing.html" class="nav-logo">
+      <img src="assets/logo.png" alt="BestFood" class="nav-logo-icon"> BestFood
+    </a>
+    <div class="nav-actions"><a href="seleccionar-platos.html" class="link-muted">← Volver a los platos</a></div>
+  </header>
+
+  <main class="delivery-wrap">
+    <p class="eyebrow-plain">CASI ESTÁ LISTO</p>
+    <h1>¿Cuándo te lo llevamos?</h1>
+    <p class="delivery-intro">Escoge el día y la franja horaria que mejor se adapte a tu semana. Podrás revisar tu elección antes de confirmar.</p>
+
+    <section class="delivery-order-strip" aria-live="polite">
+      <div><span>Tu plan</span><strong id="delivery-plan">—</strong></div>
+      <div><span>Comidas</span><strong id="delivery-meals">—</strong></div>
+      <div><span>Platos diferentes</span><strong id="delivery-dishes">—</strong></div>
+    </section>
+
+    <form id="delivery-form" class="delivery-card">
+      <div class="delivery-section">
+        <h2><span class="delivery-step">1</span> Frecuencia de entrega</h2>
+        <div class="delivery-frequency" role="group" aria-label="Frecuencia de entrega">
+          <label class="frequency-option">
+            <input type="radio" name="frequency" value="semanal" checked>
+            <span><strong>Una entrega semanal</strong><small>Recibe todas tus comidas juntas.</small></span>
+          </label>
+          <label class="frequency-option">
+            <input type="radio" name="frequency" value="diario">
+            <span><strong>Entrega día a día</strong><small>Elige una franja para tus entregas diarias.</small></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="delivery-section">
+        <h2><span class="delivery-step">2</span> Día de entrega</h2>
+        <label for="delivery-date" class="delivery-label">Selecciona una fecha</label>
+        <input id="delivery-date" name="deliveryDate" type="date" required>
+        <p class="delivery-hint">Selecciona una fecha a partir de mañana. Las fechas se habilitan como demostración; la disponibilidad real dependerá del servicio de reparto.</p>
+      </div>
+
+      <div class="delivery-section">
+        <h2><span class="delivery-step">3</span> Franja horaria</h2>
+        <div class="delivery-slots">
+          <label class="slot-option"><input type="radio" name="timeSlot" value="8:00 a. m. – 12:00 m." required><span><strong>8:00 a. m. – 12:00 m.</strong><small>Mañana</small></span></label>
+          <label class="slot-option"><input type="radio" name="timeSlot" value="12:00 m. – 4:00 p. m."><span><strong>12:00 m. – 4:00 p. m.</strong><small>Mediodía</small></span></label>
+          <label class="slot-option"><input type="radio" name="timeSlot" value="4:00 p. m. – 8:00 p. m."><span><strong>4:00 p. m. – 8:00 p. m.</strong><small>Tarde</small></span></label>
+        </div>
+      </div>
+
+      <p id="delivery-error" class="delivery-error" role="alert" hidden></p>
+      <div class="delivery-actions">
+        <a href="seleccionar-platos.html" class="btn-ghost">← Modificar platos</a>
+        <button class="btn-primary" type="submit">Continuar al pago →</button>
+      </div>
+    </form>
+  </main>
+  <script src="js/programar-entrega.js"></script>
+</body>
+</html>

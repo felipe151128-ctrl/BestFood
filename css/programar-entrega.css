@@ -1,0 +1,28 @@
+/* Mejora 2 — calendario y franja de entrega */
+.delivery-wrap{max-width:850px;margin:0 auto;padding:3rem 1.4rem 5rem}
+.delivery-wrap>.eyebrow-plain{text-align:center;color:var(--forest);font-weight:700;font-size:.78rem;letter-spacing:.13em}
+.delivery-wrap h1{font-family:var(--font-display);font-size:clamp(2rem,5vw,3.1rem);text-align:center;margin:.5rem 0}
+.delivery-intro{text-align:center;color:var(--ink-soft);line-height:1.65;max-width:650px;margin:0 auto 2rem}
+.delivery-order-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;background:#fff;border:1px solid var(--sand);border-radius:var(--radius-lg);padding:1.2rem;margin-bottom:1.2rem}
+.delivery-order-strip div{display:flex;flex-direction:column;gap:.3rem}
+.delivery-order-strip span{font-size:.82rem;color:var(--ink-soft)}
+.delivery-order-strip strong{color:var(--forest)}
+.delivery-card{background:#fff;border:1px solid var(--sand);border-radius:var(--radius-lg);padding:clamp(1.2rem,4vw,2rem)}
+.delivery-section+.delivery-section{border-top:1px solid var(--sand);margin-top:1.6rem;padding-top:1.6rem}
+.delivery-section h2{display:flex;align-items:center;gap:.7rem;font-family:var(--font-display);font-size:1.25rem;margin:0 0 1rem}
+.delivery-step{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--forest);color:white;font-family:var(--font-body);font-size:.9rem}
+.delivery-frequency,.delivery-slots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
+.delivery-slots{grid-template-columns:repeat(3,minmax(0,1fr))}
+.frequency-option,.slot-option{display:flex;align-items:flex-start;gap:.75rem;border:1.5px solid var(--sand);border-radius:var(--radius);padding:1rem;cursor:pointer}
+.frequency-option:has(input:checked),.slot-option:has(input:checked){border-color:var(--forest);background:#f5f8f3}
+.frequency-option input,.slot-option input{margin-top:.25rem;accent-color:var(--forest)}
+.frequency-option span,.slot-option span{display:flex;flex-direction:column;gap:.3rem}
+.frequency-option strong,.slot-option strong{font-size:.9rem}
+.frequency-option small,.slot-option small{font-size:.8rem;color:var(--ink-soft);line-height:1.4}
+.delivery-label{display:block;font-size:.9rem;font-weight:600;margin-bottom:.5rem}
+#delivery-date{width:100%;max-width:360px;padding:.85rem 1rem;border:1.5px solid var(--sand);border-radius:var(--radius);font:inherit;background:white}
+.delivery-hint{font-size:.82rem;color:var(--ink-soft);line-height:1.5;max-width:600px}
+.delivery-error{padding:.8rem 1rem;border-radius:var(--radius);background:#fff1f0;color:#9b2828;margin-top:1rem}
+.delivery-actions{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:2rem}
+.delivery-actions .btn-primary,.delivery-actions .btn-ghost{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;padding:.85rem 1.2rem;border-radius:var(--radius);font:inherit;font-weight:600;cursor:pointer}
+@media(max-width:620px){.delivery-order-strip{grid-template-columns:1fr}.delivery-frequency,.delivery-slots{grid-template-columns:1fr}.delivery-actions{flex-direction:column-reverse;align-items:stretch}.delivery-actions>*{width:100%;text-align:center}}

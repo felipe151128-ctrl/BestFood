@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BestFood — Confirma tu pedido</title>
+
+  <link rel="icon" type="image/png" href="assets/logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="site-nav">
+    <a href="landing.html" class="nav-logo">
+      <img src="assets/logo.png" alt="BestFood" class="nav-logo-icon">
+      BestFood
+    </a>
+  </header>
+
+  <section class="checkout-wrap">
+
+    <!-- ============ FORMULARIO: CONTACTO + ENTREGA + PAGO ============ -->
+    <div class="checkout-form-col">
+
+      <form id="payment-form" novalidate>
+
+        <div class="checkout-block">
+          <h2>Contacto</h2>
+          <div class="field">
+            <label for="contact-email">Correo electrónico</label>
+            <input type="email" id="contact-email" placeholder="tucorreo@ejemplo.com" required>
+          </div>
+        </div>
+
+        <div class="checkout-block">
+          <h2>Dirección de entrega</h2>
+          <div class="field-row-split">
+            <div class="field">
+              <label for="ship-name">Nombre</label>
+              <input type="text" id="ship-name" placeholder="Nombre" required>
+            </div>
+            <div class="field">
+              <label for="ship-lastname">Apellidos</label>
+              <input type="text" id="ship-lastname" placeholder="Apellidos" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="ship-address">Dirección</label>
+            <input type="text" id="ship-address" placeholder="Calle, número, apartamento" required>
+          </div>
+          <div class="field-row-split">
+            <div class="field">
+              <label for="ship-city">Ciudad</label>
+              <input type="text" id="ship-city" placeholder="Ciudad" required>
+            </div>
+            <div class="field">
+              <label for="ship-zip">Código postal</label>
+              <input type="text" id="ship-zip" placeholder="000000" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="ship-phone">Teléfono</label>
+            <input type="tel" id="ship-phone" placeholder="Para avisos sobre tu entrega" required>
+          </div>
+        </div>
+
+        <div class="checkout-block" id="checkout-payment">
+          <h2>Pago</h2>
+          <div class="card-brands">
+            <span class="card-brand visa">VISA</span>
+            <span class="card-brand mc">MC</span>
+            <span class="card-brand amex">AMEX</span>
+          </div>
+
+          <div class="field">
+            <label for="card-number">Número de tarjeta</label>
+            <input type="text" id="card-number" placeholder="0000 0000 0000 0000" maxlength="19" inputmode="numeric" required>
+          </div>
+
+          <div class="field-row-split">
+            <div class="field">
+              <label for="card-expiry">Vencimiento</label>
+              <input type="text" id="card-expiry" placeholder="MM/AA" maxlength="5" required>
+            </div>
+            <div class="field">
+              <label for="card-cvv">Código de seguridad</label>
+              <input type="text" id="card-cvv" placeholder="123" maxlength="3" inputmode="numeric" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="card-name">Nombre del titular</label>
+            <input type="text" id="card-name" placeholder="Como aparece en la tarjeta" required>
+          </div>
+
+          <button type="submit" class="btn-primary btn-block" id="pay-btn">Pagar <span id="pay-btn-total">$0</span></button>
+        </div>
+      </form>
+    </div>
+
+    <!-- ============ RESUMEN DEL PEDIDO (columna lateral) ============ -->
+    <div class="checkout-summary-col">
+      <div class="checkout-summary">
+        <div class="summary-item">
+          <img src="https://images.pexels.com/photos/725991/pexels-photo-725991.jpeg?cs=tinysrgb&w=200" alt="Plan BestFood" class="summary-thumb">
+          <div>
+            <p class="summary-item-title">Plan <span id="summary-plan">—</span></p>
+            <p class="summary-item-sub"><span id="summary-meals">—</span> · <span id="summary-delivery">—</span></p>
+          </div>
+        </div>
+
+        <div class="summary-line">
+          <span>Subtotal</span>
+          <span id="summary-subtotal">$0</span>
+        </div>
+        <div class="summary-line">
+          <span>Envío</span>
+          <span>Incluido</span>
+        </div>
+        <div class="summary-line summary-total">
+          <span>Total</span>
+          <strong id="summary-total">$0</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ MENSAJE DE ÉXITO (oculto hasta pagar) ============ -->
+    <div class="checkout-success" id="checkout-success">
+      <div class="success-icon">✓</div>
+      <h2>¡Pedido confirmado!</h2>
+      <p>Tu suscripción a BestFood quedó activada. Te enviamos la confirmación a tu correo.</p>
+      <a href="cuenta.html" class="btn-ghost btn-block">Ir a mi cuenta</a>
+    </div>
+
+  </section>
+
+  <script src="js/script.js"></script>
+  <script src="js/integracion-platos.js"></script>
+</body>
+</html>

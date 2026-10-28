@@ -1,0 +1,22 @@
+.bf-account-panel{max-width:1000px;margin:2rem auto;padding:clamp(1rem,3vw,1.6rem);background:#fff;border:1px solid var(--sand,#e8e2d6);border-radius:var(--radius-lg,18px);color:var(--ink,#242820)}
+.bf-account-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:1.2rem}
+.bf-account-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.12em;color:var(--forest,#284b35);margin:0 0 .35rem}
+.bf-account-panel h2{font-family:var(--font-display,Georgia,serif);font-size:1.6rem;margin:0}
+.bf-account-status{font-size:.78rem;font-weight:700;color:var(--forest,#284b35);background:#edf3e9;padding:.4rem .7rem;border-radius:999px;white-space:nowrap}
+.bf-account-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem}
+.bf-account-stats>div{display:flex;flex-direction:column;gap:.4rem;padding:1rem;background:#f8f7f2;border-radius:var(--radius,12px)}
+.bf-account-stats span,.bf-account-block span{font-size:.82rem;color:var(--ink-soft,#73776d)}
+.bf-account-stats strong{color:var(--forest,#284b35);font-size:1rem}
+.bf-account-block{margin-top:1.4rem}.bf-account-block h3{font-size:1rem;margin:0 0 .7rem}
+.bf-account-block>div{display:flex;justify-content:space-between;gap:1rem;padding:.65rem 0;border-bottom:1px solid var(--sand,#e8e2d6)}
+.bf-account-block>div:last-child{border-bottom:0}
+.bf-account-block ul{list-style:none;padding:0;margin:0}
+.bf-account-dish{display:flex;justify-content:space-between;gap:1rem;padding:.8rem 0;border-bottom:1px solid var(--sand,#e8e2d6)}
+.bf-account-dish span{display:flex;flex-direction:column;gap:.25rem}.bf-account-dish small{font-size:.8rem;color:var(--ink-soft,#73776d)}
+.bf-account-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.4rem}
+.bf-account-primary,.bf-account-secondary,.bf-account-danger{display:inline-flex;align-items:center;justify-content:center;border-radius:var(--radius,12px);padding:.8rem 1rem;font:inherit;font-size:.88rem;font-weight:600;text-decoration:none;cursor:pointer}
+.bf-account-primary{background:var(--forest,#284b35);color:white;border:1px solid var(--forest,#284b35)}
+.bf-account-secondary{background:white;color:var(--forest,#284b35);border:1px solid var(--forest,#284b35)}
+.bf-account-danger{background:white;color:#9b2828;border:1px solid #e7c6c3}
+.bf-account-empty{color:var(--ink-soft,#73776d);line-height:1.6}.bf-account-disclaimer{font-size:.78rem;line-height:1.5;color:var(--ink-soft,#73776d);margin:1rem 0 0}
+@media(max-width:620px){.bf-account-head{flex-direction:column}.bf-account-stats{grid-template-columns:1fr}.bf-account-actions{flex-direction:column}.bf-account-actions>*{width:100%}}
