@@ -10,7 +10,7 @@
   panel.id = 'bf-account-subscription';
   panel.className = 'bf-account-panel';
   if (!order || !Array.isArray(order.dishes) || !order.dishes.length) {
-    panel.innerHTML = `<p class="bf-account-eyebrow">TU SUSCRIPCIÓN</p><h2>Mi cuenta BestFood</h2><p class="bf-account-empty">Todavía no encontramos un pedido guardado en este navegador.</p><a class="bf-account-primary" href="landing.html#planes">Explorar planes</a>`;
+    panel.innerHTML = `<p class="bf-account-eyebrow">TU SUSCRIPCIÓN</p><h2>Mi cuenta BestFood</h2><p class="bf-account-empty">Todavía no encontramos un pedido guardado en este navegador.</p><a class="bf-account-primary" href="index.html#planes">Explorar planes</a>`;
     main.prepend(panel); return;
   }
   const dishes = order.dishes.map(d => `<li class="bf-account-dish"><span><strong>${esc(d.name)}</strong><small>Cantidad: ${Number(d.quantity)||0}</small></span><strong>${money((Number(d.quantity)||0)*(Number(d.unitPrice)||0))}</strong></li>`).join('');

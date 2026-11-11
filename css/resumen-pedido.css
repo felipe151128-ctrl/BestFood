@@ -18,3 +18,5 @@
 .bf-order-note{font-size:.78rem;line-height:1.5;color:var(--ink-soft,#73776d);margin:1rem 0}
 .bf-order-links{display:flex;gap:1rem;flex-wrap:wrap}.bf-order-links a{font-size:.85rem;font-weight:600;color:var(--forest,#284b35);text-underline-offset:3px}
 @media(max-width:520px){.bf-order-plan{grid-template-columns:1fr}.bf-order-head{flex-direction:column}.bf-order-badge{align-self:flex-start}}
+:focus-visible { outline: 3px solid #1D4ED8; outline-offset: 3px; border-radius: 4px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } }

@@ -440,3 +440,80 @@ if (accountGreeting) {
 
   updatePrefLabels();
 }
+
+
+/* ============================================
+   MENÚ — OBJETIVOS Y PREFERENCIAS NUTRICIONALES
+   Se activa únicamente en menu.html. Guarda los datos
+   en el navegador; todavía no filtra platos porque el
+   catálogo no incluye fichas nutricionales verificadas.
+   ============================================ */
+const nutritionForm = document.getElementById('nutrition-form');
+if (nutritionForm) {
+  const nutritionStorageKey = 'bestfood_nutrition_preferences';
+  const nutritionFeedback = document.getElementById('nutrition-feedback');
+  const nutritionReset = document.getElementById('nutrition-reset');
+  const nutritionFields = ['calories', 'protein', 'carbs', 'fats', 'fiber', 'sugars', 'saturatedFat', 'sodium'];
+  const nutritionChecks = ['vegetarian', 'vegan', 'glutenFree', 'lactoseFree'];
+
+  function showNutritionFeedback(message, isError = false) {
+    nutritionFeedback.textContent = message;
+    nutritionFeedback.style.color = isError ? 'var(--error)' : 'var(--forest)';
+  }
+
+  function loadNutritionPreferences() {
+    try {
+      const saved = localStorage.getItem(nutritionStorageKey);
+      if (!saved) return;
+      const preferences = JSON.parse(saved);
+      nutritionFields.forEach((field) => {
+        const input = nutritionForm.elements.namedItem(field);
+        if (input && preferences[field] !== undefined) input.value = preferences[field];
+      });
+      nutritionChecks.forEach((field) => {
+        const input = nutritionForm.elements.namedItem(field);
+        if (input) input.checked = Boolean(preferences[field]);
+      });
+      showNutritionFeedback('Cargamos las preferencias que guardaste anteriormente.');
+    } catch (error) {
+      console.warn('No se pudieron cargar las preferencias nutricionales.', error);
+      showNutritionFeedback('No se pudieron cargar las preferencias guardadas.', true);
+    }
+  }
+
+  nutritionForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const preferences = {};
+    let valid = true;
+    nutritionFields.forEach((field) => {
+      const input = nutritionForm.elements.namedItem(field);
+      const value = Number(input.value);
+      if (input.value.trim() === '' || !Number.isFinite(value) || value < 0 || !input.checkValidity()) valid = false;
+      preferences[field] = value;
+    });
+    nutritionChecks.forEach((field) => {
+      preferences[field] = nutritionForm.elements.namedItem(field).checked;
+    });
+    if (!valid) {
+      showNutritionFeedback('Revisa los valores: deben ser números válidos y no negativos.', true);
+      return;
+    }
+    if (preferences.vegan) preferences.vegetarian = true;
+    try {
+      localStorage.setItem(nutritionStorageKey, JSON.stringify(preferences));
+      showNutritionFeedback('¡Preferencias guardadas en este navegador! ✓');
+    } catch (error) {
+      console.error('No se pudieron guardar las preferencias nutricionales.', error);
+      showNutritionFeedback('El navegador no permitió guardar los datos. Revisa su configuración.', true);
+    }
+  });
+
+  nutritionReset.addEventListener('click', () => {
+    nutritionForm.reset();
+    try { localStorage.removeItem(nutritionStorageKey); }
+    catch (error) { console.warn('No se pudieron borrar las preferencias guardadas.', error); }
+    showNutritionFeedback('Preferencias restablecidas.');
+  });
+
+  loadNutritionPreferences();
+}

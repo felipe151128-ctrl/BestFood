@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Consulta tu plan, pedidos y preferencias en tu cuenta BestFood.">
   <title>BestFood — Mi cuenta</title>
 
   <link rel="icon" type="image/png" href="assets/logo.png">
@@ -15,8 +16,8 @@
 <body>
 
   <header class="site-nav">
-    <a href="landing.html" class="nav-logo">
-      <img src="assets/logo.png" alt="BestFood" class="nav-logo-icon">
+    <a href="index.html" class="nav-logo">
+      <img loading="lazy" decoding="async" src="assets/logo.png" alt="BestFood" class="nav-logo-icon">
       BestFood
     </a>
     <div class="nav-actions nav-icons">
@@ -31,7 +32,7 @@
     <!-- ============ ENCABEZADO ============ -->
     <div class="account-header">
       <div>
-        <p class="account-greeting" id="account-greeting">Hola de nuevo 👋</p>
+        <p class="account-greeting" id="account-greeting">Hola de nuevo <svg class="bf-icon" viewBox="0 0 24 24" role="img" aria-label="hand" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12V5a1.5 1.5 0 0 1 3 0v5-6a1.5 1.5 0 0 1 3 0v6-4a1.5 1.5 0 0 1 3 0v6l1-2a1.5 1.5 0 0 1 2.8 1l-2 6c-.8 2.4-2.5 4-5 4h-2c-2 0-3.5-1-4.5-2.5L4 14a1.5 1.5 0 0 1 2.2-2z"/></g></svg></p>
         <h1>Tu cuenta BestFood</h1>
       </div>
       <span class="plan-badge" id="account-plan-badge">Plan Plus</span>
@@ -58,7 +59,7 @@
           <strong>Jueves — Cocina asiática</strong>
         </div>
       </div>
-      <a href="landing.html#planes" class="btn-ghost">Cambiar de plan</a>
+      <a href="index.html#planes" class="btn-ghost">Cambiar de plan</a>
     </div>
 
     <!-- ============ HISTORIAL DE PEDIDOS ============ -->
@@ -129,21 +130,21 @@
       <h2>Novedades</h2>
       <div class="news-list">
         <div class="news-item">
-          <span class="news-icon">🌏</span>
+          <span class="news-icon"><svg class="bf-icon" viewBox="0 0 24 24" role="img" aria-label="globe" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></g></svg></span>
           <div>
             <p class="news-title">Nuevo día de festival: cocina mexicana</p>
             <p class="news-desc">Este mes agregamos tacos y enchiladas a tus días de festival.</p>
           </div>
         </div>
         <div class="news-item">
-          <span class="news-icon">🎉</span>
+          <span class="news-icon"><svg class="bf-icon" viewBox="0 0 24 24" role="img" aria-label="sparkles" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m4 20 7-7M13 4l1.5 3.5L18 9l-3.5 1.5L13 14l-1.5-3.5L8 9l3.5-1.5zM19 15l.8 1.7L22 17.5l-2.2.8L19 20.5l-.8-2.2-2.2-.8 2.2-.8z"/></g></svg></span>
           <div>
             <p class="news-title">20% de descuento en tu primer mes Premium</p>
             <p class="news-desc">Válido si actualizas tu plan antes de fin de mes.</p>
           </div>
         </div>
         <div class="news-item">
-          <span class="news-icon">📦</span>
+          <span class="news-icon"><svg class="bf-icon" viewBox="0 0 24 24" role="img" aria-label="package" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5zM3 8v9l9 5 9-5V8M12 13v9"/></g></svg></span>
           <div>
             <p class="news-title">Ahora puedes elegir entrega día a día</p>
             <p class="news-desc">Actualizamos la calculadora de planes con esta opción.</p>
@@ -156,8 +157,8 @@
     <div class="account-card">
       <h2>Gestión de cuenta</h2>
       <div class="account-actions">
-        <a href="landing.html#planes" class="btn-ghost btn-block">Cambiar de plan</a>
-        <a href="landing.html" class="btn-ghost btn-block logout-btn">Cerrar sesión</a>
+        <a href="index.html#planes" class="btn-ghost btn-block">Cambiar de plan</a>
+        <a href="index.html" class="btn-ghost btn-block logout-btn">Cerrar sesión</a>
       </div>
     </div>
 

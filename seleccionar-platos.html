@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personaliza tu semana eligiendo los platos de BestFood.">
   <title>BestFood — Elige tus platos</title>
   <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,16 +13,16 @@
 </head>
 <body>
   <header class="site-nav">
-    <a href="landing.html" class="nav-logo">
-      <img src="assets/logo.png" alt="BestFood" class="nav-logo-icon"> BestFood
+    <a href="index.html" class="nav-logo">
+      <img loading="lazy" decoding="async" src="assets/logo.png" alt="BestFood" class="nav-logo-icon"> BestFood
     </a>
     <div class="nav-actions">
-      <a href="landing.html#planes" class="link-muted">Cambiar plan</a>
+      <a href="index.html#planes" class="link-muted">Cambiar plan</a>
     </div>
   </header>
 
   <main class="meal-picker-wrap">
-    <a class="meal-back" href="landing.html#planes">← Volver a los planes</a>
+    <a class="meal-back" href="index.html#planes">← Volver a los planes</a>
     <div class="meal-picker-heading">
       <p class="eyebrow-plain">TU SEMANA, A TU MANERA</p>
       <h1>Elige tus platos</h1>
@@ -38,40 +39,84 @@
     <div class="picker-progress" aria-hidden="true"><span id="picker-progress-bar"></span></div>
     <p id="picker-feedback" class="picker-feedback">Agrega platos hasta completar tu semana.</p>
 
+    <!-- Personalización nutricional integrada en el flujo de suscripción -->
+    <section class="plan-nutrition" id="plan-nutrition" aria-labelledby="plan-nutrition-title">
+      <div class="plan-nutrition-heading">
+        <div>
+          <p class="eyebrow-plain">TU PERFIL, TU PLAN</p>
+          <h2 id="plan-nutrition-title">Personaliza tus comidas</h2>
+          <p>Define tus metas sin salir de esta pantalla. Se guardan para tus próximas visitas.</p>
+        </div>
+        <button type="button" class="nutrition-toggle" id="nutrition-toggle" aria-expanded="true" aria-controls="nutrition-controls">Editar objetivos <span aria-hidden="true">⌃</span></button>
+      </div>
+      <div id="nutrition-controls" class="plan-nutrition-controls">
+        <form id="plan-nutrition-form">
+          <div class="plan-goals-grid">
+            <label>Calorías al día <span>kcal</span><input type="number" name="calories" min="0" max="20000" step="50" placeholder="Ej. 2000"></label>
+            <label>Proteína <span>g</span><input type="number" name="protein" min="0" max="1000" step="1" placeholder="Ej. 100"></label>
+            <label>Carbohidratos <span>g</span><input type="number" name="carbs" min="0" max="2000" step="1" placeholder="Ej. 250"></label>
+            <label>Grasas totales <span>g</span><input type="number" name="fats" min="0" max="1000" step="1" placeholder="Ej. 70"></label>
+          </div>
+          <details class="plan-extra-goals">
+            <summary>Más objetivos y preferencias alimentarias</summary>
+            <div class="plan-goals-grid extra-goals-grid">
+              <label>Fibra <span>g</span><input type="number" name="fiber" min="0" max="500" placeholder="Ej. 25"></label>
+              <label>Azúcares <span>g</span><input type="number" name="sugars" min="0" max="1000" placeholder="Ej. 50"></label>
+              <label>Grasas saturadas <span>g</span><input type="number" name="saturatedFat" min="0" max="500" placeholder="Ej. 20"></label>
+              <label>Sodio <span>mg</span><input type="number" name="sodium" min="0" max="100000" step="10" placeholder="Ej. 2300"></label>
+            </div>
+            <div class="plan-dietary-options">
+              <label><input type="checkbox" name="vegetarian"> Vegetariana</label>
+              <label><input type="checkbox" name="vegan"> Vegana</label>
+              <label><input type="checkbox" name="glutenFree"> Sin gluten</label>
+              <label><input type="checkbox" name="lactoseFree"> Sin lactosa</label>
+            </div>
+          </details>
+          <div class="plan-nutrition-actions">
+            <button class="btn-primary" type="submit">Guardar mi perfil</button>
+            <button class="nutrition-reset" type="button" id="plan-nutrition-reset">Restablecer</button>
+            <p id="plan-nutrition-feedback" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+        <div class="nutrition-live-summary" id="nutrition-live-summary"><span class="nutrition-summary-dot"></span><span>Configura tus metas para personalizar la selección.</span></div>
+      </div>
+      <p class="nutrition-data-note">Las fichas de cada plato muestran ingredientes propuestos y valores nutricionales estimados por porción. Confirma la receta final con cocina antes de usar estos datos para alergias o necesidades médicas.</p>
+    </section>
+
     <section class="picker-grid" id="picker-grid">
       <article class="picker-card" data-id="quinoa" data-name="Bowl de quinoa y vegetales" data-price="18000" data-tag="Alto en fibra" data-image="https://images.pexels.com/photos/3872370/pexels-photo-3872370.jpeg?cs=tinysrgb&w=600">
-        <img src="https://images.pexels.com/photos/3872370/pexels-photo-3872370.jpeg?cs=tinysrgb&w=600" alt="Bowl de quinoa y vegetales">
-        <div class="picker-card-body"><span class="picker-tag">Alto en fibra</span><h2>Bowl de quinoa y vegetales</h2><p class="picker-price">$18.000</p>
+        <img loading="lazy" decoding="async" src="https://images.pexels.com/photos/3872370/pexels-photo-3872370.jpeg?cs=tinysrgb&w=600" alt="Bowl de quinoa y vegetales">
+        <div class="picker-card-body"><span class="picker-tag">Alto en fibra</span><h2>Bowl de quinoa y vegetales</h2><p class="picker-price">$18.000</p><button type="button" class="card-nutrition-note nutrition-details-trigger" data-nutrition-note data-open-nutrition>Consultar ingredientes y alérgenos <span aria-hidden="true">＋</span></button>
           <div class="quantity-control"><button type="button" class="qty-btn" data-change="-1" aria-label="Quitar bowl de quinoa">−</button><output class="qty-value">0</output><button type="button" class="qty-btn" data-change="1" aria-label="Agregar bowl de quinoa">+</button></div>
         </div>
       </article>
       <article class="picker-card" data-id="salmon" data-name="Salmón a la parrilla" data-price="26000" data-tag="Alto en proteína" data-image="https://images.pexels.com/photos/725991/pexels-photo-725991.jpeg?cs=tinysrgb&w=600">
-        <img src="https://images.pexels.com/photos/725991/pexels-photo-725991.jpeg?cs=tinysrgb&w=600" alt="Salmón a la parrilla">
-        <div class="picker-card-body"><span class="picker-tag">Alto en proteína</span><h2>Salmón a la parrilla</h2><p class="picker-price">$26.000</p>
+        <img loading="lazy" decoding="async" src="https://images.pexels.com/photos/725991/pexels-photo-725991.jpeg?cs=tinysrgb&w=600" alt="Salmón a la parrilla">
+        <div class="picker-card-body"><span class="picker-tag">Alto en proteína</span><h2>Salmón a la parrilla</h2><p class="picker-price">$26.000</p><button type="button" class="card-nutrition-note nutrition-details-trigger" data-nutrition-note data-open-nutrition>Consultar ingredientes y alérgenos <span aria-hidden="true">＋</span></button>
           <div class="quantity-control"><button type="button" class="qty-btn" data-change="-1" aria-label="Quitar salmón">−</button><output class="qty-value">0</output><button type="button" class="qty-btn" data-change="1" aria-label="Agregar salmón">+</button></div>
         </div>
       </article>
       <article class="picker-card" data-id="ramen" data-name="Ramen japonés" data-price="24000" data-tag="Día de festival" data-image="https://images.pexels.com/photos/884600/pexels-photo-884600.jpeg?cs=tinysrgb&w=600">
-        <img src="https://images.pexels.com/photos/884600/pexels-photo-884600.jpeg?cs=tinysrgb&w=600" alt="Ramen japonés">
-        <div class="picker-card-body"><span class="picker-tag festival">🌏 Día de festival</span><h2>Ramen japonés</h2><p class="picker-price">$24.000</p>
+        <img loading="lazy" decoding="async" src="https://images.pexels.com/photos/884600/pexels-photo-884600.jpeg?cs=tinysrgb&w=600" alt="Ramen japonés">
+        <div class="picker-card-body"><span class="picker-tag festival"><svg class="bf-icon" viewBox="0 0 24 24" role="img" aria-label="globe" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></g></svg> Día de festival</span><h2>Ramen japonés</h2><p class="picker-price">$24.000</p><button type="button" class="card-nutrition-note nutrition-details-trigger" data-nutrition-note data-open-nutrition>Consultar ingredientes y alérgenos <span aria-hidden="true">＋</span></button>
           <div class="quantity-control"><button type="button" class="qty-btn" data-change="-1" aria-label="Quitar ramen">−</button><output class="qty-value">0</output><button type="button" class="qty-btn" data-change="1" aria-label="Agregar ramen">+</button></div>
         </div>
       </article>
       <article class="picker-card" data-id="italiana" data-name="Trattoria italiana" data-price="25000" data-tag="Día de festival" data-image="https://images.pexels.com/photos/6223229/pexels-photo-6223229.jpeg?cs=tinysrgb&w=600">
-        <img src="https://images.pexels.com/photos/6223229/pexels-photo-6223229.jpeg?cs=tinysrgb&w=600" alt="Trattoria italiana">
-        <div class="picker-card-body"><span class="picker-tag festival">🌏 Día de festival</span><h2>Trattoria italiana</h2><p class="picker-price">$25.000</p>
+        <img loading="lazy" decoding="async" src="https://images.pexels.com/photos/6223229/pexels-photo-6223229.jpeg?cs=tinysrgb&w=600" alt="Trattoria italiana">
+        <div class="picker-card-body"><span class="picker-tag festival"><svg class="bf-icon" viewBox="0 0 24 24" role="img" aria-label="globe" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></g></svg> Día de festival</span><h2>Trattoria italiana</h2><p class="picker-price">$25.000</p><button type="button" class="card-nutrition-note nutrition-details-trigger" data-nutrition-note data-open-nutrition>Consultar ingredientes y alérgenos <span aria-hidden="true">＋</span></button>
           <div class="quantity-control"><button type="button" class="qty-btn" data-change="-1" aria-label="Quitar plato italiano">−</button><output class="qty-value">0</output><button type="button" class="qty-btn" data-change="1" aria-label="Agregar plato italiano">+</button></div>
         </div>
       </article>
       <article class="picker-card" data-id="vegano" data-name="Bowl vegano de garbanzos" data-price="19000" data-tag="100% plant-based" data-image="https://images.pexels.com/photos/3794378/pexels-photo-3794378.jpeg?cs=tinysrgb&w=600">
-        <img src="https://images.pexels.com/photos/3794378/pexels-photo-3794378.jpeg?cs=tinysrgb&w=600" alt="Bowl vegano de garbanzos">
-        <div class="picker-card-body"><span class="picker-tag">100% plant-based</span><h2>Bowl vegano de garbanzos</h2><p class="picker-price">$19.000</p>
+        <img loading="lazy" decoding="async" src="https://images.pexels.com/photos/3794378/pexels-photo-3794378.jpeg?cs=tinysrgb&w=600" alt="Bowl vegano de garbanzos">
+        <div class="picker-card-body"><span class="picker-tag">100% plant-based</span><h2>Bowl vegano de garbanzos</h2><p class="picker-price">$19.000</p><button type="button" class="card-nutrition-note verified-vegan nutrition-details-trigger" data-nutrition-note data-open-nutrition>✓ Opción plant-based · Ver detalles <span aria-hidden="true">＋</span></button>
           <div class="quantity-control"><button type="button" class="qty-btn" data-change="-1" aria-label="Quitar bowl vegano">−</button><output class="qty-value">0</output><button type="button" class="qty-btn" data-change="1" aria-label="Agregar bowl vegano">+</button></div>
         </div>
       </article>
       <article class="picker-card" data-id="ensalada" data-name="Ensalada fresca del día" data-price="16000" data-tag="Baja en calorías" data-image="https://images.pexels.com/photos/4198015/pexels-photo-4198015.jpeg?cs=tinysrgb&w=600">
-        <img src="https://images.pexels.com/photos/4198015/pexels-photo-4198015.jpeg?cs=tinysrgb&w=600" alt="Ensalada fresca del día">
-        <div class="picker-card-body"><span class="picker-tag">Baja en calorías</span><h2>Ensalada fresca del día</h2><p class="picker-price">$16.000</p>
+        <img loading="lazy" decoding="async" src="https://images.pexels.com/photos/4198015/pexels-photo-4198015.jpeg?cs=tinysrgb&w=600" alt="Ensalada fresca del día">
+        <div class="picker-card-body"><span class="picker-tag">Baja en calorías</span><h2>Ensalada fresca del día</h2><p class="picker-price">$16.000</p><button type="button" class="card-nutrition-note nutrition-details-trigger" data-nutrition-note data-open-nutrition>Consultar ingredientes y alérgenos <span aria-hidden="true">＋</span></button>
           <div class="quantity-control"><button type="button" class="qty-btn" data-change="-1" aria-label="Quitar ensalada">−</button><output class="qty-value">0</output><button type="button" class="qty-btn" data-change="1" aria-label="Agregar ensalada">+</button></div>
         </div>
       </article>
@@ -82,6 +127,7 @@
       <button type="button" class="btn-primary" id="picker-continue" disabled>Continuar al pago →</button>
     </section>
   </main>
+
   <script src="js/seleccionar-platos.js"></script>
 </body>
 </html>

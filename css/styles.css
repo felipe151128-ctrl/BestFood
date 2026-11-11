@@ -10,7 +10,7 @@
   --cream: #FBFBF7;        /* fondo claro general */
   --sand: #E8E4D9;         /* tarjetas / bloques suaves */
   --ink: #2E2E2A;          /* texto principal */
-  --ink-soft: #6B6B62;     /* texto secundario */
+  --ink-soft: #55584F; /* contraste reforzado para texto secundario */     /* texto secundario */
   --error: #C4453A;
 
   --sage: #8FBFA0;         /* verde suave: acentos secundarios */
@@ -1622,4 +1622,23 @@ a { color: inherit; }
   font-size: 0.88rem;
   font-weight: 600;
   color: var(--forest);
+}
+
+
+/* Planificación flexible — funcionalidad BestFood */
+.calc-mode-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:8px}
+.calc-mode-option{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line, #ddd);border-radius:12px;padding:12px;cursor:pointer}
+.calc-mode-option input{margin-top:4px;accent-color:var(--forest, #203f2e)}
+.calc-mode-option span{display:grid;gap:4px}.calc-mode-option small{color:var(--ink-soft, #666);line-height:1.4}
+.flexible-days{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:10px}
+.flexible-day{border:1px solid var(--line, #ddd);border-radius:10px;padding:10px;display:grid;gap:8px}
+.flexible-day strong{margin-bottom:2px}.flexible-day label{display:flex;align-items:center;gap:7px;font-size:.94rem}.flexible-day input{accent-color:var(--forest, #203f2e)}
+@media(max-width:600px){.calc-mode-options,.flexible-days{grid-template-columns:1fr}}
+
+
+/* Accesibilidad: foco visible, iconografía vectorial y movimiento reducido. */
+.bf-icon { display:inline-block; width:1.15em; height:1.15em; vertical-align:-0.2em; flex:0 0 auto; }
+:focus-visible { outline: 3px solid #1D4ED8; outline-offset: 3px; border-radius: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }
